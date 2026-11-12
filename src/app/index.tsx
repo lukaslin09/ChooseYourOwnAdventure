@@ -1,9 +1,15 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Image } from 'expo-image';
+import { Link } from "expo-router";
+import { StyleSheet, View } from "react-native";
+
+
+const bookCover = require('@/assets/images/cover.png');
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <Image source={bookCover} style={styles.image} />
+      <Link href="/start" style={styles.button}>   Start Reading!   </Link>
     </View>
   );
 }
@@ -13,5 +19,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#0000ff',
+    margin: 20,
   },
+  image: {
+    width: 320,
+    height: 480,
+    borderRadius: 4,
+  }
 });
